@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Phonebook</string>
+    <string name="input_edit_text">Number</string>
+    <string name="send_otp_text">Send OTP</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="verify_code">Verify Code</string>
+</resources>

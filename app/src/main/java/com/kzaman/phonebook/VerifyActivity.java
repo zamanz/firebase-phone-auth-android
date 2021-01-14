@@ -89,6 +89,7 @@ public class VerifyActivity extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), Dashboard.class);
                         startActivity(intent);
                         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                        finish();
 
                     }
                     else {

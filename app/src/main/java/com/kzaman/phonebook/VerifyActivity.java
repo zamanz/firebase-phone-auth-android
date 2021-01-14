@@ -35,7 +35,7 @@ public class VerifyActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        //String phone = getIntent().getExtras().getString("phone");
+        OTP_ID = getIntent().getExtras().getString("OTP_ID");
 
         verify_button = findViewById(R.id.verify_button);
         input_code = findViewById(R.id.input_otp_code);
@@ -51,31 +51,6 @@ public class VerifyActivity extends AppCompatActivity {
             }
         });
 
-        PhoneAuthOptions options =
-                PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber("+8801716724245")       // Phone number to verify
-                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                        .setActivity(this)                 // Activity (for callback binding)
-                        .setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-                            @Override
-                            public void onCodeSent(@NonNull String verifiedId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-
-                                OTP_ID = verifiedId;
-                            }
-
-                            @Override
-                            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                                signInWithPhoneAuthCredential(phoneAuthCredential);
-                            }
-
-                            @Override
-                            public void onVerificationFailed(@NonNull FirebaseException e) {
-                                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        })// OnVerificationStateChangedCallbacks
-                        .build();
-
-        PhoneAuthProvider.verifyPhoneNumber(options);
     }
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
@@ -90,7 +65,6 @@ public class VerifyActivity extends AppCompatActivity {
                         startActivity(intent);
                         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                         finish();
-
                     }
                     else {
                         Toast.makeText(getApplicationContext(), "Sign Code Error!", Toast.LENGTH_SHORT).show();

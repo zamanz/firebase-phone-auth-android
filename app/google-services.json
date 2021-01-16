@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "350811307348",
-    "project_id": "dofphonebook-9b102",
-    "storage_bucket": "dofphonebook-9b102.appspot.com"
+    "project_number": "516680089851",
+    "project_id": "fir-7fd0d",
+    "storage_bucket": "fir-7fd0d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:350811307348:android:6d44d3d8f94cdaf1621cc1",
+        "mobilesdk_app_id": "1:516680089851:android:5c109395adc5a15de0b05e",
         "android_client_info": {
-          "package_name": "com.kzaman.phonebook"
+          "package_name": "me.kzaman.firebaseauth"
         }
       },
       "oauth_client": [
         {
-          "client_id": "350811307348-nop70mr33gp9imjlpbvgdrjsue4mad30.apps.googleusercontent.com",
+          "client_id": "516680089851-bde7vpr1lq9o3ufe67uqmmp954gctssp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDwHjzjXctxZK3IbtCKAltUFFs_6ypW25s"
+          "current_key": "AIzaSyBzIYQlPA1uVcsFQez_O2gNqgEqSlIdTw4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "350811307348-nop70mr33gp9imjlpbvgdrjsue4mad30.apps.googleusercontent.com",
+              "client_id": "516680089851-bde7vpr1lq9o3ufe67uqmmp954gctssp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

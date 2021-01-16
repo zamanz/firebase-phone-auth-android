@@ -1,4 +1,4 @@
-package com.kzaman.phonebook;
+package me.kzaman.firebaseauth;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.kzaman.phonebook", appContext.getPackageName());
+        assertEquals("me.kzaman.firebaseauth", appContext.getPackageName());
     }
 }

@@ -1,4 +1,4 @@
-package com.kzaman.phonebook;
+package me.kzaman.firebaseauth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,11 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.FirebaseException;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
@@ -34,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        send_otp_button = findViewById(R.id.send_otp_button);
+        send_otp_button = findViewById(R.id.continue_btn);
         input_phone_number = findViewById(R.id.input_phone_number);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             // User is signed in
             Toast.makeText(getApplicationContext(), "You Are Already Login", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(getApplicationContext(), Dashboard.class);
+            Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
             startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             finish();
@@ -50,17 +47,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendOtpCode();
-//                if(input_phone_number.getText().toString().isEmpty()){
-//                    Toast.makeText(getApplicationContext(), "Phone Number Can't be Empty", Toast.LENGTH_SHORT).show();
-//                }
-//                else{
-//                    String phone_number = input_phone_number.getText().toString().trim();
-//                    Intent intent = new Intent(getApplicationContext(), VerifyActivity.class);
-//                    intent.putExtra("phone", phone_number);
-//                    startActivity(intent);
-//                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-//                }
-
             }
         });
     }
@@ -68,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
     private void sendOtpCode(){
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber("+8801716724245")       // Phone number to verify
+                        .setPhoneNumber("+8801716724245") // Phone number to verify
                         .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                        .setActivity(this)                 // Activity (for callback binding)
+                        .setActivity(this) // Activity (for callback binding)
                         .setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                             @Override
                             public void onCodeSent(@NonNull String verifiedId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {

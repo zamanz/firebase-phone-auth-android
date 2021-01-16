@@ -1,4 +1,4 @@
-package com.kzaman.phonebook;
+package me.kzaman.firebaseauth;
 
 import org.junit.Test;
 

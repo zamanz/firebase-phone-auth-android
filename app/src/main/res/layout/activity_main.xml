@@ -11,27 +11,23 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="20dp"
-        tools:ignore="UselessParent">
+        android:padding="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_phone_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/input_box_bg"
-            android:hint="@string/input_edit_text"
+            android:hint="@string/input_number_hint"
             android:padding="15dp"
-            android:inputType="number"
-            tools:ignore="MissingConstraints">
-
-        </com.google.android.material.textfield.TextInputEditText>
+            android:inputType="number"/>
 
         <Button
-            android:id="@+id/send_otp_button"
+            android:id="@+id/continue_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@string/send_otp_text"
+            android:text="@string/continue_btn"
             android:padding="10dp">
 
         </Button>
